@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-decoration: grey;
+        }
+        .calculator {
+            width: 300px;
+            margin: 50px auto;
+            border: 1px solid #d89494;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-decoration-color: #d38585;
+            text-size-adjust: 10px;
+        }
+        .result {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: right;
+        }
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-gap: 10px;
+        }
+        button {
+            padding: 10px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            box-shadow: #d89494;
+        }
+        button.operator {
+            background-color: #f0f0f0;
+        }
+        button.clear {
+            background-color: #ff6666;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <div class="result" id="result">0</div>
+        <div class="buttons">
+            <button class="clear" onclick="clearResult()">C</button>
+            <button onclick="appendToResult('7')">7</button>
+            <button onclick="appendToResult('8')">8</button>
+            <button onclick="appendToResult('9')">9</button>
+            <button onclick="appendToResult('4')">4</button>
+            <button onclick="appendToResult('5')">5</button>
+            <button onclick="appendToResult('6')">6</button>
+            <button onclick="appendToResult('0')">0</button>
+            <button onclick="appendToResult('1')">1</button>
+            <button onclick="appendToResult('2')">2</button>
+            <button onclick="appendToResult('3')">3</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToResult('-')" class="operator">-</button>
+            <button onclick="appendToResult('*')" class="operator">*</button>
+            <button onclick="appendToResult('/')" class="operator">/</button>
+            <button onclick="appendToResult('+')" class="operator">+</button>
+        </div>
+    </div>
+
+    <script>
+        const result = document.getElementById('result');
+
+        function appendToResult(value) {
+            result.textContent += value;
+        }
+
+        function clearResult() {
+            result.textContent = '';
+        }
+
+        function calculateResult() {
+            try {
+                result.textContent = eval(result.textContent);
+            } catch (error) {
+                result.textContent = 'Error';
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey Form</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+            padding: 10px;
+            background-color: #f8f4f4dc;
+            text-shadow: burlywood;
+        }
+        h1,h2{
+            margin: 10px;
+            padding: 10px;
+            text-decoration: burlywood;
+        }
+        .button{
+            background-color: burlywood;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Survey Form</h1>
+    <p id="description">Please take a moment to fill our survey.</p>
+    <form id="survey-form">
+        <label for="name" id="name-label">Name:</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+
+        <label for="email" id="email-label">Email:</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email"required><br>
+
+        <label for="number" id="number-label">Age:</label>
+        <input type="number" id="number" name="age" min="18" max="100" placeholder="Enter your age" required><br>
+
+        <label for="dropdown">how did you hear about us?</label>
+        <select id="dropdown" name="hearAbout">
+            <option value="socialMedia">Social Media</option>
+            <option value="friend">Friend</option>
+            <option value="internet">Internet Search</option>
+            <option value="other">Other</option>
+        </select><br>
+
+        <fieldset>
+            <legend>What's your favorite programming language?</legend>
+            <label><input type="radio" name="favoriteLanguage" value="javascript"> JavaScript</label><br>
+            <label><input type="radio" name="favoriteLanguage" value="python"> Python</label><br>
+            <label><input type="radio" name="favoriteLanguage" value="java"> Java</label><br>
+            <label><input type="radio" name="favoriteLanguage" value="other"> Other</label><br>
+        </fieldset>
+
+        <fieldset>
+            <legend>What features would you like to see in our next product?</legend>
+            <label><input type="checkbox" name="features" value="moreFeatures"> More features</label><br>
+            <label><input type="checkbox" name="features" value="betterDesign"> Better design</label><br>
+            <label><input type="checkbox" name="features" value="improvedPerformance"> Improved performance</label><br>
+            <label><input type="checkbox" name="features" value="other"> Other</label><br>
+        </fieldset>
+
+        <label for="comments">Any additional comments?</label><br>
+        <textarea id="comments" name="comments" rows="4" cols="50" placeholder="Enter your comments here"></textarea><br>
+
+        <input type="submit" id="submit" value="Submit">
+    </form>
+</body>
+</html>
